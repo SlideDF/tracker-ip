@@ -14,6 +14,12 @@ const getIp = async () => {
 
 const trackerIp = (value) => {
     fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_GwFJHXWZSUDLqtZynPvEZLqNBKMMd&domain=${value}`).then(res => res.json()).then(res => {
+
+        if(res.code === 422) {
+            alert(res.messages)
+            return
+        }
+
         infoIp.innerText = res.ip
         infoLocation.innerText = `${res.location.region}, ${res.location.city}`
         infoTimezone.innerText = res.location.timezone
@@ -36,8 +42,7 @@ const initMap = (lat, lng) => {
     }).addTo(map);
         
     const Icon = L.icon({
-      iconUrl: './assets/images/icon-location.svg',
-    
+      iconUrl: './assets/images/icon-location.svg'
     });
     
     const marker = L.marker([lat, lng], {icon: Icon}).addTo(map);
