@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | IP Address Tracker</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+  integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+  crossorigin=""/>
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+  integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+  crossorigin=""></script>
+
+  <script async src="./index.js"></script>
+
+</head>
+<body>
+  <div id="content">
+    <header>
+      <div id="tracker">
+        <h2 id="header-title">IP Address Tracker</h2>
+        <form id="search-ip-tracker">
+          <input type="text" id="input-ip-tracker" placeholder="Search for any IP address or domain">
+          <button type="submit" id="button-ip-tracker">
+            <img src="./assets/images/icon-arrow.svg" alt="">
+          </button>
+        </form>
+      </div>
+
+      <div id="info-tracker">
+        <div class="details-tracker">
+          <p class="name-tracker" id="ip-address">IP ADDRESS</p>
+          <h1 class="content-tracker" id="info-ip"></h1>
+        </div>
+        <div class="details-tracker">
+          <p class="name-tracker" id="location">LOCATION</p>
+          <h1 class="content-tracker" id="info-location"></h1>
+        </div>
+        <div class="details-tracker">
+          <p class="name-tracker" id="ip-timezone">TIMEZONE</p>
+          <h1 class="content-tracker" id="info-timezone"></h1>
+        </div>
+        <div class="details-tracker">
+          <p class="name-tracker" id="ip-isp">ISP</p>
+          <h1 class="content-tracker" id="info-isp"></h1>
+        </div>
+      </div>
+    </header>
+
+    <div id="map-renderer">
+    </div>
+  </div>
+</body>
+</html>
